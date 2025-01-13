@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – quarto_test</title>
+<title>layer1 – quarto_test</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -90,11 +119,11 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">layer0</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">layer1</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -107,15 +136,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#haut_kleidung" id="toc-haut_kleidung" class="nav-link active" data-scroll-target="#haut_kleidung">Haut_Kleidung</a>
+  <ul class="collapse">
+  <li><a href="#i.-前言---preface" id="toc-i.-前言---preface" class="nav-link" data-scroll-target="#i.-前言---preface">I. 前言 - Preface</a></li>
+  <li><a href="#ii.-the-designer-dilemma." id="toc-ii.-the-designer-dilemma." class="nav-link" data-scroll-target="#ii.-the-designer-dilemma.">II. The Designer Dilemma.</a>
+  <ul class="collapse">
+  <li><a href="#subsection-a-history-of-elegance" id="toc-subsection-a-history-of-elegance" class="nav-link" data-scroll-target="#subsection-a-history-of-elegance">Subsection: A History of Elegance</a></li>
+  </ul></li>
+  <li><a href="#iii.-brands-or-branding" id="toc-iii.-brands-or-branding" class="nav-link" data-scroll-target="#iii.-brands-or-branding">III. Brands or Branding?</a></li>
+  <li><a href="#iiii.-layers-of-meaning" id="toc-iiii.-layers-of-meaning" class="nav-link" data-scroll-target="#iiii.-layers-of-meaning">IIII. Layers of Meaning</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">layer1</h1>
 </div>
 
 
@@ -132,9 +176,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
+<section id="haut_kleidung" class="level1">
+<h1>Haut_Kleidung</h1>
+<p><del>Hot</del> <strong><em>Haut</em></strong> : <samp>ADJECTIVE</samp>. (<em>situation</em>) <strong>high</strong>.</p>
+<p><strong><em>Kleidung</em></strong> : <samp>NOUN</samp>. [<kbd>uncountable</kbd>, <kbd>feminine</kbd>] <strong>clothes, clothing</strong>.</p>
+<section id="i.-前言---preface" class="level2">
+<h2 class="anchored" data-anchor-id="i.-前言---preface">I. 前言 - Preface</h2>
+<p>This is not an inline math equation incase you were wondering: <span class="math display">\[ f(x) = \int_{-\infty}^\infty
+    \hat{f}(\xi), e^{2 \pi i \xi x}
+    \, d\xi \]</span></p>
+</section>
+<section id="ii.-the-designer-dilemma." class="level2">
+<h2 class="anchored" data-anchor-id="ii.-the-designer-dilemma.">II. The Designer Dilemma.</h2>
+<p>xXx To start off, I think it’s kind of obvious that streetwear is my passion it’s what I base my style around, it’s just what I feel comfortable wearing and it does act as a reflection of my general demeanor.</p>
+<p>That is not to say that I am clueless about anything that’s not streetwear, in fact I am very passionate (and very well versed) about several different styles some which way may even be seen as completely antagonistic to streetwear. I just don’t personally indulge as much in those styles, but to deprive myself from the wonders of the fashion world would be an extremely miserable experience. We should always be searching for inspiration regardless of where it may come from.</p>
+<p>Let me give you an example. My favorite brand of all is a Korean brand called <a href="https://skootskootskoot.com/" target="_blank"><strong>Skoot</strong></a> , it’s a brand that has accessible aspects but also quite a few avant-garde aspects, and the reason why it’s my favorite brand is because it has two of my favorite designers, in fact my favorite designer in the world is a Korean woman called <a href="https://www.instagram.com/melovemealot/" target="_blank"><strong>Baek Ye-Jin</strong></a>, she is literally an Asian alien, that woman is living in the future. The other one from Skoot is a Canadian guy called <a href="https://www.instagram.com/problem6oy" target="_blank"><strong>Problemboy</strong></a> Problemboy and he’s very cryptic and mysterious person, but he specializes in what would be graphic/print clothing and I love that. I love these guys, I’d love to be able to collaborate with them in some way eventually.</p>
+<p>Another designer that I really like is Oliver Sykes, he is a British dude with a very good presence (I will get more into what exactly I mean with <em>presence</em> later on), his brand is Drop Dead <a href="https://dropdead.world/" target="_blank"><strong>Drop Dead</strong></a> which is a very edgy brand, it’s super dark wear, it’s super edge wear, but it’s VERY good quality for what it costs, I mean it’s quite cheap because it’s a passion project of that guy and he literally does it because he likes it. The brand has a very distinct feel to it that I really appreciate, it feels like it fits together well.</p>
+<p>I’m going to give one more example of a designer and from there I’ll focus on brands because I feel that if I keep going it’s going to be way too long and the focus, in the interest of time, is on brands. This is a designer that I admire quite a bit, <a href="https://www.instagram.com/max.reynders/" target="_blank"><strong>May Reynders</strong></a>. He’s a German who’s basically a pioneer of current techwear, managing to merge what would be contemporary European techwear with streetwear and it’s definitely quite edgy, it’s also quite dark but I think he manages to create very good concepts. His brand is <a href="https://store.mxdvs.co/" target="_blank"><strong>MXDVS</strong></a>. xXx</p>
+<section id="subsection-a-history-of-elegance" class="level3">
+<h3 class="anchored" data-anchor-id="subsection-a-history-of-elegance">Subsection: A History of Elegance</h3>
+<p>From the streets of Paris to the runways of Milan, haute couture has shaped the global fashion narrative. Designers have pushed boundaries with bold fabrics, intricate patterns, and revolutionary ideas.</p>
+<blockquote class="blockquote">
+<p>“Fashion fades, but style is eternal.” – Yves Saint Laurent</p>
+</blockquote>
+</section>
+</section>
+<section id="iii.-brands-or-branding" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-brands-or-branding">III. Brands or Branding?</h2>
+<p>When refering to brands,</p>
+</section>
+<section id="iiii.-layers-of-meaning" class="level2">
+<h2 class="anchored" data-anchor-id="iiii.-layers-of-meaning">IIII. Layers of Meaning</h2>
+<p>Each layer of haute couture clothing has a story to tell, whether it’s a nod to history, a statement of rebellion, or a celebration of individuality.</p>
+<ol type="1">
+<li><strong>Layer One</strong>: The foundation of design.</li>
+<li><strong>Layer Two</strong>: The artistic narrative.</li>
+<li><strong>Layer Three</strong>: The experience it creates for the wearer.</li>
+</ol>
+<p>Suspendisse potenti. Nulla facilisi. Cras nec arcu at nisl fermentum posuere in vel quam.</p>
+<p><a href="https://en.wikipedia.org/wiki/Haute_couture" target="_blank">Learn more about haute couture</a></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -227,7 +311,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/gobtech\.github\.io\/quarto_test\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
