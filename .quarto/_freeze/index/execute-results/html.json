@@ -1,0 +1,12 @@
+{
+  "hash": "587d6cbe0f9d82ee4352bb264084ddcc",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"quarto_test\"\n---\n\n\n\n\n# Welcome to My Awesome Site\n\nThis site is built using Quarto.\n\nHere's an inline equation: $E = mc^2$.\n\n## Code Example\n\n::: {#8f951e8b .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-2-output-1.png){width=590 height=411}\n:::\n:::\n\n\nHere is a more complex inline equation $\\sqrt{x}+\\sqrt{-x}=32$\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

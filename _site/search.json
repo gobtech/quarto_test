@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto_test",
+    "section": "",
+    "text": "This site is built using Quarto.\nHere’s an inline equation: \\(E = mc^2\\).\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\nHere is a more complex inline equation \\(\\sqrt{x}+\\sqrt{-x}=32\\)\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#code-example",
+    "href": "index.html#code-example",
+    "title": "quarto_test",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\nHere is a more complex inline equation \\(\\sqrt{x}+\\sqrt{-x}=32\\)\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
