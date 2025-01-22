@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -67,6 +101,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -100,6 +163,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./layer2.html" aria-current="page"> 
 <span class="menu-text">layer2</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./layer3.html"> 
+<span class="menu-text">layer3</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -116,7 +183,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles" id="toc-an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles" class="nav-link active" data-scroll-target="#an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles">An Inquiry into Slimness: Existential Density in the Age of Arguelles</a></li>
+  <li><a href="#an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles" id="toc-an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles" class="nav-link active" data-scroll-target="#an-inquiry-into-slimness-existential-density-in-the-age-of-arguelles">An Inquiry into Slimness: Existential Density in the Age of Arguelles</a>
+  <ul class="collapse">
+  <li><a href="#i.-序文-preface-the-nokia-8600-luna-and-the-cargo-entrance-of-the-sheraton-buenos-aires" id="toc-i.-序文-preface-the-nokia-8600-luna-and-the-cargo-entrance-of-the-sheraton-buenos-aires" class="nav-link" data-scroll-target="#i.-序文-preface-the-nokia-8600-luna-and-the-cargo-entrance-of-the-sheraton-buenos-aires">I. 序文 — Preface: The Nokia 8600 Luna and the Cargo Entrance of the Sheraton Buenos Aires</a></li>
+  <li><a href="#ii.-introduction-the-global-south-containment-strategy-mc-menor-jp-as-a-psychological-operation-to-neutralize-the-slim" id="toc-ii.-introduction-the-global-south-containment-strategy-mc-menor-jp-as-a-psychological-operation-to-neutralize-the-slim" class="nav-link" data-scroll-target="#ii.-introduction-the-global-south-containment-strategy-mc-menor-jp-as-a-psychological-operation-to-neutralize-the-slim">II. Introduction: The Global South Containment Strategy — “<em>MC Menor JP</em>” as a Psychological Operation to Neutralize the Slim</a></li>
+  <li><a href="#iii.-unit-cube-tschudi-perez-a-testament-to-infinitesimal-inflexibility-or-infinf-for-friends-and-family" id="toc-iii.-unit-cube-tschudi-perez-a-testament-to-infinitesimal-inflexibility-or-infinf-for-friends-and-family" class="nav-link" data-scroll-target="#iii.-unit-cube-tschudi-perez-a-testament-to-infinitesimal-inflexibility-or-infinf-for-friends-and-family">III. “Unit Cube Tschudi Perez” A Testament to Infinitesimal Inflexibility (or {Inf:Inf} for friends and family)</a>
+  <ul class="collapse">
+  <li><a href="#iii.-1.-conditionality-of-the-slim" id="toc-iii.-1.-conditionality-of-the-slim" class="nav-link" data-scroll-target="#iii.-1.-conditionality-of-the-slim">III. — 1. Conditionality of the Slim</a></li>
+  <li><a href="#iii.-2.-deconstructive-materialism-and-the-significance-of-the-droideka-fishies" id="toc-iii.-2.-deconstructive-materialism-and-the-significance-of-the-droideka-fishies" class="nav-link" data-scroll-target="#iii.-2.-deconstructive-materialism-and-the-significance-of-the-droideka-fishies">III. — 2. Deconstructive Materialism and the Significance of the Droideka Fishies</a></li>
+  <li><a href="#iii.-3.-finitely-generated-modules-of-the-oreste-pantin-subcategory" id="toc-iii.-3.-finitely-generated-modules-of-the-oreste-pantin-subcategory" class="nav-link" data-scroll-target="#iii.-3.-finitely-generated-modules-of-the-oreste-pantin-subcategory">III. — 3. Finitely Generated Modules of the “<em>Oreste Pantin</em>” Subcategory</a></li>
+  </ul></li>
+  <li><a href="#iv.-.ılılıllllılılı.-look-at-this-boom-box." id="toc-iv.-.ılılıllllılılı.-look-at-this-boom-box." class="nav-link" data-scroll-target="#iv.-.ılılıllllılılı.-look-at-this-boom-box.">IV. — ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪ &lt;—– Look at this Boom Box.</a>
+  <ul class="collapse">
+  <li><a href="#iv.-1.-if-it-can-be-formalized-it-can-be-slimmed" id="toc-iv.-1.-if-it-can-be-formalized-it-can-be-slimmed" class="nav-link" data-scroll-target="#iv.-1.-if-it-can-be-formalized-it-can-be-slimmed">IV. — 1. If It Can Be Formalized, It Can Be Slimmed</a></li>
+  <li><a href="#iv.-2.-swazilands-invisible-altitude-a-liminal-space-where-witches-dare-not-fly" id="toc-iv.-2.-swazilands-invisible-altitude-a-liminal-space-where-witches-dare-not-fly" class="nav-link" data-scroll-target="#iv.-2.-swazilands-invisible-altitude-a-liminal-space-where-witches-dare-not-fly">IV. — 2. Swaziland’s Invisible Altitude: A Liminal Space Where Witches Dare Not Fly</a></li>
+  </ul></li>
+  <li><a href="#v.-the-necessity-of-slimness-concluding-thoughts-and-why-arguelles-might-be-right.-further-readings-as-a-homework" id="toc-v.-the-necessity-of-slimness-concluding-thoughts-and-why-arguelles-might-be-right.-further-readings-as-a-homework" class="nav-link" data-scroll-target="#v.-the-necessity-of-slimness-concluding-thoughts-and-why-arguelles-might-be-right.-further-readings-as-a-homework">V. — The Necessity of Slimness: Concluding Thoughts and Why Arguelles Might be Right. [+ Further Readings as a Homework]</a></li>
+  <li><a href="#vi.-acknowledgements-and-sweet-treats" id="toc-vi.-acknowledgements-and-sweet-treats" class="nav-link" data-scroll-target="#vi.-acknowledgements-and-sweet-treats">VI. — Acknowledgements and Sweet Treats</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +230,536 @@ ul.task-list li input[type="checkbox"] {
 <h1>An Inquiry into Slimness: Existential Density in the Age of Arguelles</h1>
 <section id="a-formalization-of-the-slim-as-an-aesthetic-spatial-and-metaphysical-condition" class="level4">
 <h4 class="anchored" data-anchor-id="a-formalization-of-the-slim-as-an-aesthetic-spatial-and-metaphysical-condition"><em>A Formalization of the Slim as an Aesthetic, Spatial, and Metaphysical Condition</em></h4>
-<p>WIP.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Yapping ahead.</strong></p>
+</div>
+</div>
+</section>
+<section id="i.-序文-preface-the-nokia-8600-luna-and-the-cargo-entrance-of-the-sheraton-buenos-aires" class="level2">
+<h2 class="anchored" data-anchor-id="i.-序文-preface-the-nokia-8600-luna-and-the-cargo-entrance-of-the-sheraton-buenos-aires">I. 序文 — Preface: The Nokia 8600 Luna and the Cargo Entrance of the Sheraton Buenos Aires</h2>
+<center>
+<a href="https://www.gsmarena.com/nokia_8600_luna-1995.php" target="_blank"> <img src="assets/images/image_3.jpg" alt="image_1" width="200"> </a>
+</center>
+<p><br> There exists a distinct and very specific type of <em>anticipation</em>—the <strong>anticipation of total coherence</strong>. The feeling that you are on the verge of stepping into a space where, for the first time, everything will finally <strong>make sense to you</strong>. Perhaps it is the lobby of a grand archive or library, where all the forgotten knowledge of humanity has been meticulously cataloged and tailored specifically so that <strong>you are able to understand it</strong>. Perhaps it is the Cargo Entrance of the Sheraton Buenos Aires. Perhaps it is the hall of an impossibly grand party, where everyone <strong>already knows who you are</strong>, and they have all been waiting for you—<em>just you</em>.</p>
+<p>Or, perhaps, it is the first time you hold a <strong>Nokia 8600 Luna</strong>, in your hands.</p>
+<p>Released in May 2007, the 8600 Luna was <strong>too beautiful to be a phone</strong>. It was a black monolith of glass and steel, <strong>a phone that lingered just outside the edge of understanding</strong>—like a sacred object in an ancient ritual, a piece of technology that seemed to hint at <strong>a future we were NEVER meant to reach</strong>.</p>
+<p>Of course, it was all an illusion. The 8600 Luna was already <strong>obsolete upon arrival</strong>—its design a farewell, not a welcome. The moment of coherence lasted only as long as it took for your thumb to slide the keypad down—after that, the charm was lost. The world was still the world, slightly too <em>wide</em>, slightly too <strong>coarse</strong>, never quite as <strong><em>Slim</em></strong> as you needed it to be.</p>
+</section>
+<section id="ii.-introduction-the-global-south-containment-strategy-mc-menor-jp-as-a-psychological-operation-to-neutralize-the-slim" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-introduction-the-global-south-containment-strategy-mc-menor-jp-as-a-psychological-operation-to-neutralize-the-slim">II. Introduction: The Global South Containment Strategy — “<em>MC Menor JP</em>” as a Psychological Operation to Neutralize the Slim</h2>
+<blockquote class="blockquote">
+<p>“<em>Arguelles’ nonchalant demeanor could only be attributed to his ideological control over the spatial configurations of the slim — Or so we thought.</em>”</p>
+</blockquote>
+<p><em>Slimness</em>, as conceived in the doctrine of <strong>Sebastian Arguelles</strong>, is not merely a question of thinness, nor a simple preference for narrow objects (albeit, it certainly includes all of these). It is a <strong>metaphysical</strong> imperative, an <strong>aesthetic</strong> and <strong>spatial</strong> philosophy that <em>governs</em> the very nature of things.</p>
+<p>Indeed,</p>
+<p>Through Arguelles, we perceive slimness as an ontological stance, an existential condition that seeps into all domains of life—<em>architecture</em>, <em>fashion</em>, <em>technology</em>, and even <em>social interactions</em>.</p>
+<p>We now proceed to embark on an inquiry into slimness, moving from the tangible to the abstract, culminating in a rigorous mathematical formalization of its underlying principles.</p>
+</section>
+<section id="iii.-unit-cube-tschudi-perez-a-testament-to-infinitesimal-inflexibility-or-infinf-for-friends-and-family" class="level2">
+<h2 class="anchored" data-anchor-id="iii.-unit-cube-tschudi-perez-a-testament-to-infinitesimal-inflexibility-or-infinf-for-friends-and-family">III. “Unit Cube Tschudi Perez” A Testament to Infinitesimal Inflexibility (or {Inf:Inf} for friends and family)</h2>
+<blockquote class="blockquote">
+<p>“<em>Drawing inspiration from Isamu Noguchi’s early furniture designs and Le Corbusier’s mastery of Concrete Minimalism, Arguelles set out on a journey of self-discovery. Little did he—or the world—realize that this was merely the first tremor of a revolution shaking the very foundation of existence itself.</em>”</p>
+</blockquote>
+<section id="iii.-1.-conditionality-of-the-slim" class="level3">
+<h3 class="anchored" data-anchor-id="iii.-1.-conditionality-of-the-slim">III. — 1. Conditionality of the Slim</h3>
+<p>To understand the slimness in its proper context, we must first establish its <strong>fundamental constraints</strong>. Slimness exists <em>only</em> in relation to its counterpart—the non slim. A slim object is only slim insofar as it is slimmer than its reference class. We define the <span style="background-color: #FFFF00"><em>Arguelles’ Slimness Principle</em></span> (ASP):</p>
+<blockquote style="color: black; font-family: 'Times New Roman', Times, serif;" class="blockquote">
+<strong>Definition 3.1: Arguelles’ Slimness Principle</strong><br>
+An entity is slim if and only if, under a given reference frame, it maintains a comparative degree of thinness, narrowness, or minimalism that exceeds an arbitrary threshold defined by the observer.
+</blockquote>
+<p>This sense of relativity introduces a certain degree of paradoxicality: If all things become slim, nothing is slim. Hence, slimness is a property of contrast, and its aesthetic potency derives exactly from this juxtaposition.</p>
+</section>
+<section id="iii.-2.-deconstructive-materialism-and-the-significance-of-the-droideka-fishies" class="level3">
+<h3 class="anchored" data-anchor-id="iii.-2.-deconstructive-materialism-and-the-significance-of-the-droideka-fishies">III. — 2. Deconstructive Materialism and the Significance of the Droideka Fishies</h3>
+<p>While our primary goal here is to craft an abstraction that captures the essence of Slimness, it would be shortsighted—<em>perhaps even reckless</em>—to dive in without first laying down a solid, tangible foundation to build upon from the ground up.</p>
+<hr>
+<p><link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet"></p>
+<div class="warning" style="background-color:#000000; color: #FFFFFF; border-left: solid #3232BD 4px; border-radius: 4px; padding:0.7em; font-family:'Montserrat', sans-serif;">
+<p><span></span></p>
+<p>Picture this:</p>
+<p>“<em>You stand in an impeccably arranged line, each person spaced with precision, all facing forward with quiet confidence. The entrance is a striking rectangle, far from ordinary, just wide enough to welcome the average individual. As the line inches forward, you step into what seems like a long, narrow corridor—a liminal passageway teetering between anticipation and reality. Your first instinct is that this is merely a prelude to the main event, but then the lights shift, and pulsating music erupts, jolting you from your thoughts. You lean out from the line, and there it is—a DJ booth flanked by two of the sleekest, most minimalist speakers you’ve ever encountered. And at the center of it all? The mastermind behind this experience: <strong>Arguelles</strong>. Everything is meticulously distilled to its essence—the lighting, the sound, the very atmosphere. It’s as if you’ve transcended into a realm where slimness is the ultimate law. Yet, oddly enough, you find yourself embracing this simplicity, as if everything has fallen into place in a surprising harmony. <strong>Welcome to the Slim Rave</strong>.</em>”</p>
+<p></p>
+</div>
+<hr>
+<p>Nowhere is the principle of slimness more radically manifested than in the <em>Slim Rave</em>, an event designed and optimized for peak <strong>Arguellesian aesthetics</strong>. Here, everything exists within extreme slender constraints, adhering to an almost pathological devotion to minimal width. Attending the Slim Rave is less about dancing or enjoying the music and more about navigating a hyper-optimized space where bodily movement itself is restructured by the tyranny of thinness.</p>
+<hr>
+<section id="iii.-2.1.-admissible-batuta" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-2.1.-admissible-batuta">III. — 2.1. Admissible Batuta</h4>
+<p>Upon arrival, attendees are funneled through an entrance no wider than a standard doorway, single-file, much like entering a subway turnstile. Instead of the usual wristbands, guests receive an <strong>adhesive barcode strip</strong> to be attached vertically along the forearm—QR codes deemed “too thick” for the event. Security checks are conducted via a vertical scanning gate, ensuring that even the process of verification adheres to the event’s thematic obsession.</p>
+</section>
+<section id="iii.-2.2.-dancing-duro" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-2.2.-dancing-duro">III. — 2.2. Dancing Duro</h4>
+<p>The <strong>dance corridor</strong> extends in a perfectly straight, unbroken line, measuring no wider than the narrowest Tokyo alleyway. Attendees are forced to move in single file, resulting in a unique phenomenon where front-line dancers must lead movement sequences, dictating the collective flow of the rave. This constraint, however, imposes a special form of social etiquette: a misplaced shuffle could result in a domino effect down the entire corridor.</p>
+</section>
+<section id="iii.-2.3.-the-adriansex-conjecture" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-2.3.-the-adriansex-conjecture">III. — 2.3. The Adriansex Conjecture</h4>
+<p>At the heart of the rave there is an almost comically narrow DJ setup—a single <strong>Thales TTT-Slim II</strong> turntable, with space for only one hand to operate it at a time. Arguellles, clad in a form-fitting, vertically stripped ensemble, must adopt a posture akin to a tramp operator, managing sound with surgical precision relying on minimal movements. The performance by the <strong>Slim Deck™</strong>, a propietary console that <em>compresses waveforms</em> into elongated, ultra-slim representations, rendering bass lines as mere slivers of sound.</p>
+</section>
+<section id="iii-2.4.-skinny-flaco" class="level4">
+<h4 class="anchored" data-anchor-id="iii-2.4.-skinny-flaco">III — 2.4. Skinny Flaco</h4>
+<p>The propietary sound system—<strong>Skinny Flaco™</strong> follows the principle of verticality, employing tall, slender line arrays with minimal horizontal dispersion. The bass is <em>directional</em>, engineered to travel in compressed beams, creating an unusual pocketed sound environment where low frequences feel almost intangible unless one aligns perfectly within the designated acoustic “sweet spot”.</p>
+</section>
+<section id="iii-2.5.-subliminal-manguera" class="level4">
+<h4 class="anchored" data-anchor-id="iii-2.5.-subliminal-manguera">III — 2.5. Subliminal Manguera</h4>
+<p>Lighting is reduced to its <strong>purest linear essence</strong>—sharp, vertical beams slicing through the space like laser projections. LED strips trace the periphery, pulsating in synchronized gradients of white and electric blue. There are no strobes, no excessive fixtures, only controlled illumination that enhances the perceived depth of the already slim venue.</p>
+</section>
+<section id="iii-2.6.-morsh-skoon" class="level4">
+<h4 class="anchored" data-anchor-id="iii-2.6.-morsh-skoon">III — 2.6. Morsh &amp; Skoon</h4>
+<p>All beverages are served in test tubes—cocktails distilled into vertically elongated ampoules, requiring drinkers to tilt their heads at <em>extreme</em> angles to consume. Food options are similarly constrained, consisting exclusively of stick-shaped rations.</p>
+<p>The following is a tentative list of food and drink offerings specifically catered for this event.</p>
+<hr>
+<p><link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet"></p>
+<div class="warning" style="background-color:#F5F5DC; color: #000000; border-left: solid #000000 4px; border-radius: 4px; padding:0.7em; font-family:'Montserrat', sans-serif;">
+<p><span></span></p>
+<h4 style="text-align:center;" class="anchored">
+<strong>Ultra-Thin Main Dishes</strong>
+</h4>
+<p><strong>Lengua de Papel (Paper-Thin Beef Tongue Carpaccio)</strong> — <em>Slices so thin they could be mistaken for high-grade tracing paper, seasoned with micro-dots of ponzu sauce</em>.</p>
+<p><strong>Slim Nigiri (Shinagiru-zushi, 品切る寿司)</strong> — <em>Rice grains arranged in a single-file line, with fish sliced to an almost translucent state</em>.</p>
+<p><strong>Single-Strand Soba (一本そば, Ippon Soba)</strong> – <em>A single, impossibly long strand of soba, served in a straight line on an elongated lacquered dish</em>.</p>
+<p><strong>Compressed Slim Tamale</strong> – <em>A tamale where the dough has been extruded into a sleek, pencil-thin cylinder, wrapped in a razor-thin husk</em>.</p>
+<p><br></p>
+<h4 style="text-align:center;" class="anchored">
+<strong>Snacks &amp; Appetizers</strong>
+</h4>
+<p><strong>Hyperlinear Pocky</strong> – <em>Custom-engineered Pocky sticks, extending over a meter in length, requiring specialized storage tubes</em>.</p>
+<p><strong>Dehydrated Slim Olives</strong> – <em>Pitted olives that have been flattened into thin, crisp discs</em>.</p>
+<p><strong>Micro Crackers</strong> – <em>Wasa-style crispbreads cut into needle-thin shards</em>.</p>
+<p><strong>Celery Filaments</strong> – <em>Only the thinnest fibers extracted from celery stalks</em>.</p>
+<p><br></p>
+<h4 style="text-align:center;" class="anchored">
+<strong>Desserts</strong>
+</h4>
+<p><strong>Ultra-Thin Mille-Feuille</strong> – <em>A mille-feuille pastry reduced to an extreme degree, with each layer measuring fractions of a millimeter</em>.</p>
+<p><strong>2D Gelato Slices</strong> – <em>Gelato frozen into ultra-thin sheets and served in perforated wafers</em>.</p>
+<p><strong>Single-Thread Cotton Candy</strong> – <em>A solitary spun sugar filament, served on a 3-meter-long skewer</em>.</p>
+<p><br></p>
+<h4 style="text-align:center;" class="anchored">
+<strong>Slim Drinks</strong>
+</h4>
+<p><strong>Test Tube Cocktails</strong> – <em>Liquids served exclusively in test tubes, eliminating excess volume</em>.</p>
+<p><strong>Capillary-Action Espresso</strong> – <em>A shot of espresso delivered through a narrow capillary system, allowing for an ultra-thin extraction process</em>.</p>
+<p><strong>Linear Shochu (線状焼酎, Senjō Shōchū)</strong> – <em>A distilled spirit that is sipped through an elongated, hair-thin pipette, forcing controlled intake</em>.</p>
+<p><strong>Thin Ice Martinis</strong> – <em>Martinis served with ice sheets measuring under 2 mm in thickness, designed to dissolve almost immediately</em>.</p>
+<p></p>
+</div>
+<hr>
+</section>
+<section id="iii-2.7.-smootherling-christina" class="level4">
+<h4 class="anchored" data-anchor-id="iii-2.7.-smootherling-christina">III — 2.7. Smootherling Christina</h4>
+<p>The VIP guests may access the <strong>HyperSlim Lounge</strong>, an elevated platform, reinforced by galvanized steel, spanning no wider than a plank bridge. Here, visitors recline on elongated chaise lounges while sipping from thin flutes of liquid nitrogen-cooled vodka. <strong><em>Conversation is discouraged unless conducted in hushed, elongated syllables</em></strong>.</p>
+</section>
+<section id="iii-2.8.-type-shit-the-colloquially-elegant-term-that-bridges-ideological-complexities-and-why-it-goes-fucking-hard" class="level4">
+<h4 class="anchored" data-anchor-id="iii-2.8.-type-shit-the-colloquially-elegant-term-that-bridges-ideological-complexities-and-why-it-goes-fucking-hard">III — 2.8. Type Shit: The Colloquially Elegant Term That Bridges Ideological Complexities And Why It Goes FUCKING HARD!!!</h4>
+<hr>
+Alright. Okay. I need to break character for a second here. I’m also gonna change the background color and font—
+<div class="warning" style="background-color:#f1e9da; color: #000000; border-left: solid #000000 0px; border-radius: 0px; padding-left: 1ch; font-family:'Helvetica', sans-serif;">
+<p><span></span></p>
+<p>—for some contrast because my own prose is starting to gaslight me into thinking I’ve never been a real person. You are witnessing a man actively dissociate from his own writing style, which is pretty fucking whack. But listen, I need to talk to you like a real person because this is a topic I am personally, deeply, irrationally passionate about.</p>
+<p>And I don’t even know if Arguelles fully shares the vision we’re about to manifest in this section—but quite frankly, I don’t give a <em>shit</em>.</p>
+<p>If you are showing up to <strong>The Slim Rave™</strong> in anything other than a carefully engineered cyber-dystopian fit, I will personally catapult you into the fucking Sun, you little freak. I will make you look like an 1830s Chinese opium den villager offering to suck some genitalia in exchange for a hit from an Opium pipe. <strong>THIS IS NOT</strong> your cousin’s backyard pseudo-EDM festival. <strong>THIS IS NOT</strong> some dogshit “Pachanga” party infested with a bunch of 27-year-old bigots who have never experienced a single interesting thing in their lives.</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(&gt;\)</span> <strong>Cris Menacho:</strong> But <strong>Mr.&nbsp;AcidBaby!</strong><br>
+Even though I can sometimes <strong>appreciate</strong> your twisted, fever-dream vision of life, it’s just… <strong>too much</strong> for me. It’s <strong>not natural</strong>. It’s not that I <strong>don’t respect</strong> it—I do! I can even admire it from a distance. But I could <strong>never</strong> fully live in it. You need to understand. <strong>The world I grew up in, the experiences that shaped me, they just didn’t add up to something as… extreme as this.</strong> I like my <strong>mundane little parties</strong> because they make <strong>sense</strong> to me. Because they’re a place where I can feel <strong>at ease.</strong> They’re simple, predictable, familiar. I get to be <strong>happy</strong> without having to dissect the meaning of existence every five minutes. I can go out, see my friends, meet new people, get a little drunk, have some fun—<strong>without it needing to be some grand artistic statement.</strong> And yeah, maybe these parties <strong>aren’t intellectually stimulating</strong> or <strong>philosophically enriching</strong>, but… does that really matter? You claim we’re <strong>trapped in a bubble</strong>, but if we’re <strong>happy,</strong> then… isn’t that enough? We’re <strong>living life to the fullest,</strong> just in a different way.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><span class="math inline">\(&gt;\)</span> <strong>AcidBaby:</strong> <strong>SHUT THE FUCK UP.</strong><br>
+I do <strong>not</strong> give a single shit, you <strong>absolute NPC.</strong> <strong>OF COURSE</strong> it doesn’t add up for you. That’s the entire point. <strong>Your</strong> world was built for <strong>comfort.</strong> The Slim was built for <strong>revolution.</strong> And it’s <strong>fine</strong> that you don’t get it. <strong>You’re not supposed to.</strong> But let’s be clear—just because something is <strong>familiar</strong> doesn’t mean it’s <strong>good.</strong> Just because something is <strong>comfortable</strong> doesn’t mean it’s <strong>worth preserving.</strong> Your <strong>mundane parties</strong> are <strong>aesthetic wastelands.</strong> Social voids. Intellectual purgatories where nothing truly interesting is ever allowed to happen. And yet, <strong>it’s a necessary evil</strong>. Your <strong>perfectly fine, regular, mundane</strong> lifestyle? Your <strong>crowded, indistinct, background-noise social gatherings?</strong> Your <strong>carefree, uninspired weekends?</strong><br>
+<strong>They are imperative.</strong> Your existence makes the <strong>Slim Rave</strong> feel <strong>like an event worth existing for.</strong> Without you, the slim would have <strong>no opposition.</strong> No tension. No <strong>divergence.</strong> Without you, the slim would have <strong>no reason to build something better.</strong> It also just goes <strong>inhumanely fucking hard.</strong><br>
+For all I know, you could be an <strong>employee at the Häagen-Dazs in Lyon,</strong> standing there, dead-eyed, telling people:</p>
+<blockquote class="blockquote">
+<p><em>“Excuse me, sir, even though you just paid <strong>12 euros</strong> for your Macadamia Crunch Ice Cream, you still need to pay an additional <strong>3 euros</strong> to sit in our courtyard.”</em></p>
+</blockquote>
+<p>Like bitch, be fucking for real. I have never experienced a more stupid policy in my life, A <strong>seating fee?</strong> At an Ice Cream Shop?? I almost yoinked myself out of existence out of sheer disbelief.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><span class="math inline">\(&gt;\)</span> <strong>Cris Menacho:</strong> I… That was oddly specific.</p>
+</blockquote>
+<p>This is a <strong>philosophically rigorous rave</strong>. A <strong>mathematical</strong> rave. A <strong>fucking existential</strong> rave. The very concept of sound is being redefined in real time at this event, and you’re thinking of pulling up in a disgusting Shein hoodie? <strong>YOU GOT ME FUCKED UP</strong>. I will literally kill myself in front of you if you do that.</p>
+<p>Hahaha, ok. Maybe that was bit <em>too</em> harsh. But you get the point right? This is an extremely important soiree. You wouldn’t go dressed up like the homeless version of an Italian Castrati to your daughter’s wedding, would you?</p>
+<p>Let’s lay down the ground rules for what is acceptable and what will get you publicly executed in front of the DJ booth.<br>
+<br></p>
+<hr>
+<section id="fit-guidlines-follow-through-or-blow-the-fuck-up" class="level5">
+<h5 class="anchored" data-anchor-id="fit-guidlines-follow-through-or-blow-the-fuck-up"><strong>Fit Guidlines</strong> (Follow Through or Blow the Fuck Up)</h5>
+<p><br> We are not dressing like civilians here. If your fit does not look like it was designed for someone who pilots an experimental zero-gravity war machine, start the fuck over you prick. Immediately.</p>
+<p><strong>Approved Designers:</strong></p>
+<p><em>Rick Owens</em>, <em>Heliot Emil</em>, <em>Raf Simons</em>, <em>Junya Watanabe</em>. Yeah I may be glazing them a bit too hard here, but these motherfuckers deserve the flowers I am throwing at them.</p>
+<p>If it’s not one of these, it better be an obscure avant-garde Japanese brand where the designer lives in an undisclosed bunker, releases three garments per year, and personally denies your purchase request unless you can flawlessly recite the first three pages of <em>Critique of Pure Reason</em> in the original German.</p>
+<p>I don’t care if this makes no fucking sense. You can go fuck yourself with a Steel Rod, you will follow the guidelines like your life depends on it.</p>
+<p><strong>Color Palette:</strong></p>
+<p>Black. Dark Gray. Metallics. If your outfit is not visually reminiscent of an abandoned Eastern European warehouse that just got passed through a cyberpunk filter, <strong>you have failed</strong>.</p>
+<p>Do not look at me. You bear the mark of shame. GET THE FUCK OUT OF MY HOUSE!!!</p>
+<p>The most “colorful” thing you are allowed to wear is, like… gunmetal.</p>
+<p><strong>Silhouettes:</strong></p>
+<p>Slim as hell—but, and this is important, with disruptions. A little hyperstructure on the upper body? <em>Fire</em>.<br>
+Asymmetrical draping, exaggerated shoulders? <em>Type shit</em>.<br>
+Shoes that make people reconsider the entire concept of feet? <strong>Required</strong>.</p>
+<p><strong>Textures:</strong></p>
+<p>We’re talking leather, neoprene, waxed cotton—shit that looks actively hostile to human touch.<br>
+If your jacket doesn’t look like it could deflect low-caliber ammunition, take it the fuck off. <br></p>
+<hr>
+</section>
+<section id="accesories-the-exo-foreskin-come-on-now.-that-term-is-hilarious.-youre-welcome-by-the-way.-credits-to-john-nash" class="level5">
+<h5 class="anchored" data-anchor-id="accesories-the-exo-foreskin-come-on-now.-that-term-is-hilarious.-youre-welcome-by-the-way.-credits-to-john-nash"><strong>Accesories: The Exo-Foreskin™</strong> (Come on now. That term is hilarious. You’re welcome by the way. Credits to John Nash)</h5>
+<p><br></p>
+<ul>
+<li><p><strong>Necklaces:</strong> Industrial, sharp, maybe even <em>mildly threatening</em>, because why the fuck not?</p></li>
+<li><p><strong>Bracelets:</strong> Should look like part of an exoskeleton designed for high-efficiency hand-to-hand combat. You become a human weapon. Ready to extinguish the fire from all those junkie ass needle-carrying-food-stamp-fiends from East Hastings.</p></li>
+<li><p><strong>Rings:</strong> One minimalistic, one with a hidden compartment (<em>for what? I mean… if you know you know right?</em>), and one so structurally unnecessary that it physically impairs your ability to pick up small objects.</p></li>
+<li><p><strong>Earrings:</strong> One lone chrome spike dangling from your left ear. <strong>This is non-negotiable.</strong></p></li>
+</ul>
+<p>If this is too complex for you just go buy some <em>Vitaly</em>, it never fails. PERIOD.</p>
+<p><br></p>
+<hr>
+</section>
+<section id="footwear-the-foundation-of-the-slim-rave-uniform" class="level5">
+<h5 class="anchored" data-anchor-id="footwear-the-foundation-of-the-slim-rave-uniform"><strong>Footwear: The Foundation of the Slim Rave™ Uniform</strong></h5>
+<p><br> If your shoes are not actively restructuring your entire lower-body silhouette, you are a goddamn <strong>fraud</strong>. Just walk barefoot instead you mentally handicapped, seven year old monkey that just recently learned how to play the guitar.</p>
+<p>We need <strong>structural integrity that makes absolutely no sense.</strong><br>
+We need <strong>shoes that disrupt the very concept of standing.</strong> (<em>Cesar would act irrationally cautious about this whole idea</em>)<br>
+If I catch you wearing anything else, I will <strong>revoke your citizenship from Slim Country</strong> and have you extradited to <strong>Slobenia</strong>, more specifically <strong>Ljubljana</strong>, so that you can get fucked by a bunch of beautiful Femboys and they can teach you what’s good—<em>which is diabolical work, by the way</em>.</p>
+<p><strong>Aproved footwear:</strong></p>
+<ul>
+<li><p><strong>Ramones</strong> (and its several different variations that <a href="https://www.instagram.com/badfacesara/" target="_blank">Saramalacara</a> and all the Carti dick riders love)?<br>
+A <em>textbook</em> example of what you should wrap your feet in. Based as fuck.</p></li>
+<li><p><strong>Tabis?</strong> Bizarre, quite unsettling in my opinion, but very powerful. They make you walk like an eldritch entity freshly escaped from the Necronomicon, <strong>so that’s obviously a W.</strong></p></li>
+<li><p><strong>Chunky, aggressive boots that could either kick down a reinforced steel door or be used as a flotation device in case of emergency?</strong> Please and thank you. We need footwear that looks like it was stolen by a bunch of Romanian Gypsies that stumbled upon the decaying carcass of a mecha pilot in an obscure unreleased Evangelion Spinoff.</p></li>
+<li><p><strong>Custom-built brutalist monstrosities that make people ask, “What in the <em>fuck</em> are those?” but in a genuinely intrigued way?</strong> Yes sir and/or madam. Absolutely.</p></li>
+</ul>
+<p>That’s enough. Back on topic.</p>
+<p></p>
+</section>
+</div>
+<hr>
+<p>Alright, deep breath. We had a moment there.</p>
+<p>Now, where were we? Ah, yes—the Slim Rave, a convergence of form, function, and pure ideological precision. We must press forward. There is still much to dissect.</p>
+<p>Despite its rigid adherence to spatial constraints, the <strong>Slim Rave is not merely a thought experiment but a plausible venue</strong>—an actual physical space that could be constructed (albeit with some challenging ergonomical installations). Yet, it also functions as an entry point into <span style="background-color: #FFFF00"><strong>Partial Slimness Decomposition</strong></span> (PSD): a framework for understanding how slimness, when pushed to its logical extreme, can fracture into smaller constitute elements, revealing new dimensions of <em>physical</em> and <em>conceptual</em> space.</p>
+<hr>
+</section>
+</section>
+<section id="iii.-3.-finitely-generated-modules-of-the-oreste-pantin-subcategory" class="level3">
+<h3 class="anchored" data-anchor-id="iii.-3.-finitely-generated-modules-of-the-oreste-pantin-subcategory">III. — 3. Finitely Generated Modules of the “<em>Oreste Pantin</em>” Subcategory</h3>
+<blockquote class="blockquote">
+<p>“<em>What do you think he’s afraid of?</em>”<br>
+“<em>Him? Arguelles? Pfft. You already know.</em>”<br>
+“<em>Just humor me.</em>”<br>
+“<em>Fine, fine. Valeria Adrianzen. He always said she—</em>”<br>
+“<em>Mass Shooting? With an AR-15? Jockey Plaza?</em>”<br>
+“<em>Yeah.</em>”<br>
+“<em>Jesus…</em>”</p>
+</blockquote>
+<p>As we transition from tangible descriptions into abstraction, we confront the question: <em>How far can we decompose slimness before it ceases to be?</em> If we reduce the Slim Rave to its most elementary components, we are left with a single line, a one-dimensional experience of music, movement, and presence.</p>
+<p>Here arises the <span style="background-color: #FFFF00"><strong>Atomic Rave Theory</strong></span> (ART): The claim that all raves can be reduced to an atomic irreducible slim state. If taken to its logical extreme, does the Slim Rave still function as a rave? What does Arguelles see that we do not? At the subatomic level, does slimness persist?</p>
+<section id="iii.-3.1.-the-atomic-rave-theory-as-a-guideline-for-tourism-in-the-skagerrak-kattegat-region" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-3.1.-the-atomic-rave-theory-as-a-guideline-for-tourism-in-the-skagerrak-kattegat-region">III. — 3.1. The Atomic Rave Theory as a Guideline for Tourism in the Skagerrak-Kattegat Region</h4>
+<p>This is where “<sub>The</sub><sup>Slim</sup>” transcends its comedic origins and enters the realm of epistemology and perception. Slimness, as we conceive it, is an abstraction—it is not merely a measure of width but a <em>function of expectation</em>. If we accept that slimness is relative, then its perceived intensity depends on the observer’s baseline.</p>
+<p>To us, the Slim Rave is absurdly narrow—a brutal distillation of space and experience. <strong><em>But what if it is not slim enough for Arguelles?</em></strong> What if his threshold for slimness exists at a level of abstraction beyond our comprehension?</p>
+<p>Perhaps, to him, our version of the Slim Rave is still <strong>bloated</strong>, <strong>indulgent</strong>, <strong>grotesquely excessive in its spatial permissiveness</strong>. Maybe true slimness is asymptotic—an ideal that can never be fully realized, only approached in increasingly austere refinements.</p>
+<blockquote class="blockquote">
+<p><strong>What does it mean for the rave to be this slim? What is Arguelles’ vision, and why does he insist on reducing the world around him to this essential, minimal form?</strong></p>
+<blockquote class="blockquote">
+<p><strong>Does he view everything in his life in the same way, reducing people, places, and objects to their purest form?</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p><strong>Could it be that Arguelles sees slimness not as a choice, but as an inevitability—the very framework of existence itself?</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>If we imagine the rave on an atomic level, it becomes even more bizarre: how does the concept of slimness apply when we zoom in so far? Could we see the rave as a singular, atomized entity, where everything—the sound, the people, the room itself—is compressed into the most <em>efficient</em> version of itself, leaving no space for ambiguity or superfluous detail? Does Arguelles see the world in a similarly atomized way? Is every decision, every action, an attempt to distill existence to its most <em>pure</em>, most <em>efficient</em> form?</p>
+</section>
+<section id="iii.-3.2.-indescriptible-latitude-43.739087-longitude-7.427649" class="level4">
+<h4 class="anchored" data-anchor-id="iii.-3.2.-indescriptible-latitude-43.739087-longitude-7.427649">III. — 3.2. <del>Indescriptible…</del> LATITUDE: 43.739087, LONGITUDE: 7.427649</h4>
+<blockquote class="blockquote">
+<p><strong>NS</strong>: <em>Could we link any of this in a technical sense?</em><br>
+<strong>AB</strong>: <em>Huh? Listen, if your AI girlfriend is not a <strong>LOCALLY</strong> running fine-tuned model, she’s a prostitute.</em><br>
+<strong>NS</strong>: <em>What? No? I meant related to the Slim.</em><br>
+<strong>AB</strong>: <em>So like a Slim Algorithm? Something like this perhaps:</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> slim(x):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Achieved Perfect Slimness."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> slim(x <span class="op">-</span> x <span class="op">/</span> <span class="dv">2</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>NS</strong>: <em>Well, that would reduce itself exponentially… I guess it does make sense in the context of the Slim. Although, I was thinking about something more pragmatic.</em><br>
+<strong>AB</strong>: <em>I’ll look into it.</em></p>
+</blockquote>
+<p>In a sense, the Slim Rave becomes a microcosm of Arguelles’ entire worldview: a place where everything that can be compressed, reduced, and stripped down to its essence, is. And in this compression, we are left with only the most <strong>fundamental truths of existence</strong>. The rave, the people, the music—they all become reflections of a larger, almost mathematical concept of minimalism and reductionism. It’s a world where everything <em>slim</em> finds its place, and everything else is eliminated in favor of a singular, sleek vision of existence.</p>
+<p><code>If Arguelles perceives reality at an atomic level, then his standard for slimness might not even exist on a human scale. He does not see a slim cigarette—he sees the space between molecules, the inefficiency of matter itself. What we consider slim, he considers wide. If this is true, then his ideal rave is no rave at all—perhaps just a single sine wave, an auditory singularity, the theoretical limit of musical slimness.</code></p>
+<p>Thus, we must ask: <strong>are we capable of truly understanding Arguelles’ vision, or are we condemned to misinterpret it, <em>forever constructing raves that are too wide</em>?</strong> If so, then the Slim Rave, rather than being a <em>celebration</em> of slimness, is a <strong>tragic testament</strong> to our failure. We can only approximate slimness, never attain it.</p>
+</section>
+</section>
+</section>
+<section id="iv.-.ılılıllllılılı.-look-at-this-boom-box." class="level2">
+<h2 class="anchored" data-anchor-id="iv.-.ılılıllllılılı.-look-at-this-boom-box.">IV. — ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪ &lt;—– Look at this Boom Box.</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Rigorous Mathematical Content Ahead.</strong> While the overall tone of the text will remain relatively the same, the subject matter will become much more <strong><em>dense</em></strong>. Efforts will be put in place in order to maintain a high degree of readibility even for those unfamiliar with the topics discussed ahead. However, without a background on <strong>Algebraic Structures</strong> or <strong>Category Theory</strong> you should proceed with caution. REGARDLESS, it should still be an interesting read! Enjoy :)</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>“<em>We tried to take the Colimit of the Slim but it Collapsed into a One-Dimensional Line — This challenges the very foundations of our understanding!</em>”</p>
+</blockquote>
+<section id="iv.-1.-if-it-can-be-formalized-it-can-be-slimmed" class="level3">
+<h3 class="anchored" data-anchor-id="iv.-1.-if-it-can-be-formalized-it-can-be-slimmed">IV. — 1. If It Can Be Formalized, It Can Be Slimmed</h3>
+<p>Slimness, despite its aesthetic and spatial implications, is fundamentally about [<kbd><strong>structure</strong></kbd>]: the preservation of an essential form while eliminating excess. However, its interpretation is inherently <strong>context-dependent</strong>—what is considered slim in one domain (architecture, fashion, or even raves) may not translate directly to another. Thus, a rigorous <strong>mathematical framework</strong> is necessary, one that captures the relational nature of slimness rather than treating it as a fixed property.</p>
+<p>Category theory provides a natural language for this endeavor. Instead of defining slimness in absolute terms, we construct a <em>category</em> of slim objects, where an object’s slimness is determined by <strong>its morphisms</strong>—how it relates to other objects, rather than its intrinsic measurements. This shift allows us to generalize the concept across different domains and study <strong>transformations of slimness</strong> rather than static definitions.</p>
+<p>Before we begin to encode these ideas, let’s introduce the necessary definitions.</p>
+<blockquote style="color: black; font-family: 'Times New Roman', Times, serif;" class="blockquote">
+<p><strong>Definition 4.1: Yoneda’s Lemma (Condensed Definition)</strong><br>
+Let <span class="math inline">\(\mathcal{C}\)</span> be a category, and <span class="math inline">\(X\)</span> be an object in <span class="math inline">\(\mathcal{C}\)</span>. For any functor <span class="math inline">\(\mathcal{F}: \mathcal{C}^{\text{op}} \to \text{Set}\)</span>, the Yoneda Lemma asserts the following natural isomorphism:</p>
+<p><span class="math display">\[
+\text{Nat}(\text{Hom}(-, X), \mathcal{F}) \cong \mathcal{F}(X)
+\]</span></p>
+This means that the set of natural transformations between the representable functor <span class="math inline">\(\text{Hom}(-, X)\)</span> and any other functor <span class="math inline">\(\mathcal{F}\)</span> is naturally isomorphic to the set of elements of <span class="math inline">\(\mathcal{F}\)</span> evaluated at <span class="math inline">\(X\)</span>.
+</blockquote>
+<p>Furthermore, we will also utilize the following definition.</p>
+<blockquote style="color: black; font-family: 'Times New Roman', Times, serif;" class="blockquote">
+<p><strong>Definition 4.2: Yoneda Embedding (Condensed Definition)</strong><br>
+Let <span class="math inline">\(\mathcal{C}\)</span> be a locally small category and <span class="math inline">\(\mathbf{Set}\)</span> the category of sets. The $ is a functor:</p>
+<p><span class="math display">\[
+\mathbf{Y}: \mathcal{C} \to \mathbf{Set}^{\mathcal{C}^{\text{op}}}
+\]</span></p>
+<p>defined as follows: for each object <span class="math inline">\(A \in \mathcal{C}\)</span>, the functor <span class="math inline">\(\mathbf{Y}(A)\)</span> is the representable functor <span class="math inline">\(\mathrm{Hom}(-,A): \mathcal{C}^{\text{op}} \to \mathbf{Set}\)</span>, i.e.,</p>
+<p><span class="math display">\[
+\mathbf{Y}(A) = \mathrm{Hom}(-,A)
+\]</span></p>
+<p>For each morphism <span class="math inline">\(f: A \to B\)</span> in <span class="math inline">\(\mathcal{C}\)</span>, the map <span class="math inline">\(\mathbf{Y}(f)\)</span> is induced by the natural transformation:</p>
+<p><span class="math display">\[
+\mathbf{Y}(f): \mathrm{Hom}(-,A) \to \mathrm{Hom}(-,B)
+\]</span></p>
+where <span class="math inline">\(\mathbf{Y}(f)(g) = f \circ g\)</span> for <span class="math inline">\(g \in \mathrm{Hom}(C,A)\)</span>, ensuring the functor is covariant.
+</blockquote>
+<p>We are now sufficiently equipped to work on this foundation.</p>
+</section>
+<section id="iv.-2.-swazilands-invisible-altitude-a-liminal-space-where-witches-dare-not-fly" class="level3">
+<h3 class="anchored" data-anchor-id="iv.-2.-swazilands-invisible-altitude-a-liminal-space-where-witches-dare-not-fly">IV. — 2. Swaziland’s Invisible Altitude: A Liminal Space Where Witches Dare Not Fly</h3>
+<blockquote class="blockquote">
+<p>“<em>How deeply disheartening, my child. My trust was yours, and yet, the promise of lacerating your form into the singularity of a one-dimensional existence remains unfulfilled. In this betrayal, you have not only lost a son but cast an interminable shadow of regret. Disappointment weighs heavily upon us both.</em>” —Arguelles to his mother. Circa 2022</p>
+</blockquote>
+<p><a href="https://www.washingtontimes.com/news/2013/may/17/witches-cant-fly-brooms-above-150-meters-swaziland/" target="_blank">Though unconventional in its structure, this section will be organized into multiple subsections to ensure clarity and readability. Each subsection will address a distinct component of the formalization, progressively building on the overarching framework. It’s important to take into consideration that every subsection follows directly from the previous one. (Yes this whole text is a hyperlink)</a></p>
+<hr>
+<section id="iv.-2.1.-the-category-of-slimness-defining-the-structural-framework" class="level4">
+<h4 class="anchored" data-anchor-id="iv.-2.1.-the-category-of-slimness-defining-the-structural-framework">IV. — 2.1. The Category of Slimness: Defining the Structural Framework</h4>
+<hr>
+<div class="warning" style="background-color:#DCDCDC; color: #000000; border-left: solid #000000 4px; border-radius: 4px; padding:0.7em;">
+<p><span></span></p>
+<p>We formalize a category <span class="math inline">\(\mathcal{S}\)</span>, where:</p>
+<ul>
+<li>
+Objects <span class="math inline">\(X \in \mathcal{S}\)</span> are <strong>all conceivable entities</strong>, physical and conceptual (e.g., raves, architecture, cigarettes, mathematics).
+</li>
+<li>
+Morphisms between objects are constrained by a <strong>Slimness Functor</strong> <span class="math inline">\(S: \mathcal{S} \to \mathbf{Set}\)</span>, which extracts <strong>the degree of slimness</strong> each object possesses.
+</li>
+</ul>
+<p style="text-align:center;">
+<span class="math display">\[S(X) = \text{Slimness Profile of } X\]</span>
+</p>
+<strong>Example morphisms:</strong>
+<ul>
+<li>
+A <strong>regular nightclub</strong> <span class="math inline">\(N\)</span> maps to a slim club <span class="math inline">\(S(N)\)</span>, preserving only its narrowest corridors, tightest leather pants, and elongated bar counters.
+</li>
+<li>
+A <strong>non-slim object</strong> <span class="math inline">\(X\)</span> (e.g., a bulky gaming PC) maps to its <strong>slimmest possible projection</strong> <span class="math inline">\(S(X)\)</span>, yielding something like an <strong>M1 MacBook Air</strong> or a <strong>folded napkin</strong>.
+</li>
+<li>
+The <strong>Slim Rave</strong> <span class="math inline">\(R\)</span> is an <strong>initial object</strong> in this category—<strong>it represents maximal slimness</strong>.
+</li>
+</ul>
+<p></p>
+</div>
+<hr>
+</section>
+<section id="iv.-2.2.-objects-are-defined-by-their-slimness-relation" class="level4">
+<h4 class="anchored" data-anchor-id="iv.-2.2.-objects-are-defined-by-their-slimness-relation">IV. — 2.2. Objects are Defined by Their Slimness Relation</h4>
+<hr>
+<div class="warning" style="background-color:#DCDCDC; color: #000000; border-left: solid #000000 4px; border-radius: 4px; padding:0.7em;">
+<span>
+<p style="margin-left:1em;">
+</p><p>Yoneda’s Lemma tells us that <strong>we never perceive objects directly, only through their relationships</strong> (i.e., morphisms). In this case:</p>
+<p>Slimness is defined entirely by how it transforms other things.</p>
+<p>Since every object’s existence is dictated by its slimness projections, <strong>Arguelles’ perception acts as a Yoneda embedding</strong>:</p>
+<p><span class="math display">\[\mathcal{S}(X) \cong \text{Hom}(-, S(X))\]</span></p>
+<p>This implies that:</p>
+<ul>
+<li><p>The <strong>essence of slimness</strong> is encoded in the <strong>morphisms from any object into the Slim Rave</strong>.</p></li>
+<li><p><strong>Arguelles does not see non-slim things at all</strong>—they have no morphisms in this system.</p></li>
+<li><p><strong>Reality, as perceived by Arguelles, is slimness itself.</strong></p></li>
+</ul>
+<p></p>
+<p></p>
+</span></div>
+<hr>
+</section>
+<section id="iv.-2.3.-the-collapse-into-total-slimness" class="level4">
+<h4 class="anchored" data-anchor-id="iv.-2.3.-the-collapse-into-total-slimness">IV. — 2.3. The Collapse into Total Slimness</h4>
+<hr>
+<div class="warning" style="background-color:#DCDCDC; color: #000000; border-left: solid #000000 4px; border-radius: 4px; padding:0.7em;">
+<span>
+<p style="margin-top:1em; margin-left:1em;">
+</p><p>A category often has a <strong>terminal object</strong> <span class="math inline">\(T\)</span>, such that for every object <span class="math inline">\(X\)</span>, there exists a unique morphism:</p>
+<p><span class="math display">\[X \to T\]</span></p>
+<p>If we assume that <strong>slimness is a maximization process</strong>, then there exists a <strong>final form of slimness</strong> that <strong>absorbs all things</strong>. We call this object <span class="math inline">\(\Omega\)</span>, the <strong>Ultimate Slim</strong>.</p>
+<p>This means that every object in the category eventually maps into <span class="math inline">\(\Omega\)</span>, leading to a total collapse where:</p>
+<p><span class="math display">\[\forall X \in \mathcal{S}, \quad X \to \Omega\]</span></p>
+<p>Thus:</p>
+<ul>
+<li>The <strong>Slim Rave is only a step toward</strong> <span class="math inline">\(\Omega\)</span>, the <strong>pure singularity of slimness</strong>.</li>
+<li>In the <strong>idealized limit</strong>, <span class="math inline">\(\Omega\)</span> is so slim that it no longer exists in any observable dimension—it is the <strong>null object</strong>.</li>
+<li><strong>Arguelles, as a perceptual functor, becomes blind to existence itself</strong>, as everything he sees has been mapped into nothingness.</li>
+</ul>
+<p>At this point, <strong>the concept of slimness self-annihilates</strong>:</p>
+<span class="math display">\[\textbf{If slimness is everything, then slimness is nothing.}\]</span>
+<p></p>
+<p></p>
+</span></div>
+<hr>
+</section>
+<section id="iv.-2.4.-escaping-the-collapse-the-necessity-of-anti-slimness" class="level4">
+<h4 class="anchored" data-anchor-id="iv.-2.4.-escaping-the-collapse-the-necessity-of-anti-slimness">IV. — 2.4. Escaping the Collapse: The Necessity of Anti-Slimness</h4>
+<hr>
+<div class="warning" style="background-color:#DCDCDC; color: #000000; border-left: solid #000000 4px; border-radius: 4px; padding:0.7em;">
+<span>
+<p style="margin-top:1em; margin-left:1em;">
+</p><p>This total collapse implies that <strong>for slimness to remain meaningful, it must have a counterforce</strong>.</p>
+<p>We introduce a <strong>dual category</strong> <span class="math inline">\(\mathcal{A}\)</span>, representing <strong>anti-slimness</strong>, where:</p>
+<ul>
+<li>Objects are <strong>bulky, excessive, baroque, overflowing</strong>.</li>
+<li>Morphisms are <strong>thickenings</strong> rather than reductions.</li>
+<li>The <strong>initial object</strong> is <strong>Maximal Bulk, <span class="math inline">\(B\)</span></strong>, the opposite of <span class="math inline">\(\Omega\)</span>.</li>
+</ul>
+<p>The interplay between <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\mathcal{A}\)</span> creates a <strong>dialectical struggle</strong>:</p>
+<ul>
+<li>The <strong>Slim Functor</strong> attempts to collapse everything into <span class="math inline">\(\Omega\)</span>.</li>
+<li>The <strong>Anti-Slim Functor</strong> attempts to resist and <strong>expand objects away from <span class="math inline">\(\Omega\)</span></strong>.</li>
+<li>The result is a <strong>tension—a dynamic equilibrium where slimness remains distinct</strong>.</li>
+</ul>
+<p>Thus we conclude:</p>
+<span class="math display">\[\textbf{Slimness cannot exist in pure isolation—it requires resistance to remain meaningful.}\]</span>
+<p></p>
+<p></p>
+</span></div>
+<hr>
+<blockquote class="blockquote">
+<ul>
+<li><blockquote class="blockquote">
+<p><strong>R.P.</strong>: <em>WAIT, WAIT, WAIT—hold the fuck up. So all this Math bullshit. ALL OF IT. It makes sense? What the fuck. Like, is this real?</em></p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p><strong>L.F.P.</strong>: <em>Well, haha, that is a really good question. I guess it depends what exactly you mean by “real”. See, in pure mathematics, we aren’t bounded by physical intuition—we care about constructing rigorous, self-consistent farmeworks. The structures we define exist within their own formal systems, governed by axioms and logical inference. As long as our definitions hold up and we don’t run into contradictions, the mathematics is valid. It is “real”, even if that reality only exists within a carefully defined framework.</em></p>
+</blockquote></li>
+<li><blockquote class="blockquote">
+<p><strong>R.P.</strong>: <em>Okay… okay. That is insane to me. Keep going.</em></p>
+</blockquote></li>
+</ul>
+</blockquote>
+<hr>
+</section>
+<section id="iv.-2.5-kittys-labor-and-the-inference-system-behind-naming-a-palm-tree-or-why-jennifer-is-the-only-choice." class="level4">
+<h4 class="anchored" data-anchor-id="iv.-2.5-kittys-labor-and-the-inference-system-behind-naming-a-palm-tree-or-why-jennifer-is-the-only-choice.">IV. — 2.5 Kitty’s Labor and the Inference System Behind Naming a Palm Tree, or Why Jennifer Is the Only Choice.</h4>
+<hr>
+<p>If Arguelles is truly <strong>an ultimate observer of slimness</strong>, then he cannot perceive <strong>Anti-Slimness</strong> at all.</p>
+<p>Thus, the question remains:</p>
+<ul>
+<li><p><strong>Does Arguelles’ perception cause the collapse into <span class="math inline">\(\Omega\)</span>?</strong></p></li>
+<li><p><strong>Or is he merely an agent accelerating the collapse?</strong></p></li>
+<li><p><strong>If he becomes aware of Anti-Slimness, does he reject it—or does he recognize the necessity of the dialectic?</strong></p></li>
+<li><p><strong>Does observation define reality? Or does reality limit what can be observed?</strong></p></li>
+</ul>
+<div class="warning" style="background-color:#f1e9da; color: #000000; border-left: solid #000000 0px; border-radius: 0px; padding-left: 1ch; font-family:'Helvetica', sans-serif;">
+<p><span> Well I don’t fucking know. </span></p>
+</div>
+<p>We leave these questions as <strong>open problems</strong> that we may, or may not, explore in future entries.</p>
+</section>
+</section>
+</section>
+<section id="v.-the-necessity-of-slimness-concluding-thoughts-and-why-arguelles-might-be-right.-further-readings-as-a-homework" class="level2">
+<h2 class="anchored" data-anchor-id="v.-the-necessity-of-slimness-concluding-thoughts-and-why-arguelles-might-be-right.-further-readings-as-a-homework">V. — The Necessity of Slimness: Concluding Thoughts and Why Arguelles Might be Right. [+ Further Readings as a Homework]</h2>
+<blockquote class="blockquote">
+<p>“<em>This life was all it had to be. Designed. But not for Arguelles or the Slim. I watched him turn into it—anything more than Human.</em>” — <em>Jose Carlo Navarro Velasquez</em>.</p>
+</blockquote>
+<p>Slimness is not a mere aesthetic preference but a <strong>deeply structured principle</strong> that governs <em>physical space</em>, <em>abstraction</em>, and even <em>mathematical formalisms</em>. By studying its manifestations through Aguelles’ vision, we gain insight into the recursive nature of optimization, the limits of perception, and the fundamental structures underlying our aesthetic preferences.</p>
+<p>For further reading, we recommend the following list in no particular order:</p>
+<hr>
+<ul>
+<li><p><a href="https://www.cambridge.org/core/journals/journal-of-the-american-philosophical-association/article/abs/metaphysical-constraints-primitivism-and-reduction/C0FFFD665BB415CCC532FDE96198A0F4" target="_blank">“<em>Metaphysical Constraints, Primitivism, and Reduction</em>” — Michael Bertrand</a></p></li>
+<li><p><a href="https://www.researchgate.net/publication/31153364_Revisiting_the_Observer's_Paradox" target="_blank">“<em>Revisiting the Observer’s Paradox</em>” — Patricia Cukor-Avila</a></p></li>
+<li><p><a href="https://link.springer.com/book/10.1007/978-1-4612-0927-0" target="_blank">“<em>Sheaves in Geometry and Logic: A First Introduction to Topos Theory</em>” — Saunders Mac Lane &amp; Ieke Moerdijk</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/In_Praise_of_Shadows" target="_blank">“<em>In Praise of Shadows</em>” — Jun’ichirō Tanizaki</a></p></li>
+<li><p><a href="https://newmusicusa.org/nmbx/minimal-music-maximal-impact/" target="_blank">“<em>Minimal Music, Maximal Impact</em>” — Kyle Gann</a></p></li>
+<li><p><a href="https://math.jhu.edu/~eriehl/context.pdf" target="_blank">“<em>Category Theory in Context</em>” — Emily Riehl</a></p></li>
+<li><p><a href="https://press.uchicago.edu/ucp/books/book/chicago/M/bo11185066.html" target="_blank">“<em>Mies van der Rohe: A Critical Biography</em>” — Franz Schulzel</a></p></li>
+<li><p><a href="https://ikeamuseum.com/en/explore/ikea-catalogue/1994-ikea-catalogue/" target="_blank">“<em>The IKEA Catalog, 1994 Edition</em>”l</a></p></li>
+<li><p><a href="https://nokia.manymanuals.com/mobile-phones/8600-luna/user-manual-21222" target="_blank">“<em>The Instruction Manual for the Nokia 8600 Luna</em>”</a></p></li>
+<li><p><a href="https://www.amazon.com/-/es/Tadao-Ando-Complete-Philip-Jodidio/dp/3822821640" target="_blank">“<em>Tadao Ando: Complete Works</em>” — Philip Jodidiol</a></p></li>
+<li><p><a href="https://www.amazon.com/Non-Places-Introduction-Anthropology-Supermodernity-Cultural/dp/1859840515" target="_blank">“<em>Non-Places: Introduction to an Anthropology of Supermodernity</em>” — Marc Augé</a></p></li>
+<li><p><a href="https://www.amazon.com/Minimalist-Interiors-Paco-Asensio/dp/0823066363" target="_blank">“<em>Minimalist Interiors</em>” — Paco Asensiol</a></p></li>
+<li><p><a href="https://birkhauser.com/books/9783764366421" target="_blank">“<em>Minimalist Architecture</em>” — Franco Bertoni</a></p></li>
+<li><p><a href="https://www.amazon.com/Eleven-Madison-Park-Chapter-Unlimited/dp/0399580654" target="_blank">“<em>Eleven Madison Park: The Next Chapter</em>” — Daniel Humm</a></p></li>
+<li><p><a href="https://www.amazon.com/Why-Cats-Paint-Theory-Aesthetics/dp/0898156122" target="_blank">“<em>Why Cats Paint: A Theory of Feline Aesthetics</em>” — Heather Busch &amp; Burton Silver</a></p></li>
+<li><p><a href="https://birkhauser.com/books/9783764366421" target="_blank">“<em>House of Leaves</em>” — Mark Z. Danielewski</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Infinite_Jest" target="_blank">“<em>Infinite Jest</em>” — David Foster Wallace</a></p></li>
+<li><p><a href="" target="_blank">“<em>An unmarked A4 sheet of paper</em>” — The slimmest text</a></p></li>
+</ul>
+<hr>
+</section>
+<section id="vi.-acknowledgements-and-sweet-treats" class="level2">
+<h2 class="anchored" data-anchor-id="vi.-acknowledgements-and-sweet-treats">VI. — Acknowledgements and Sweet Treats</h2>
+<blockquote class="blockquote">
+<p>“<em>There is an order to the names below, but it is not alphabetical. Nor is it chronological. Nor is it rational in any conventional sense. The pattern exists, but only for those who can perceive it.</em>”</p>
+</blockquote>
+<p>This work was not the product of a single mind but rather the culmination of a collective, a council of thinkers, explorers, and conceptual terorrists that have been operating for years. Their contributions, both direct and indirect, shaped the very foundations of this text. <strong>This wouldn’t be possible without you</strong>.</p>
+<ul>
+<li><p><strong>John Nash (But Slimmed Down)</strong> – <strong>A demon</strong>, <strong>A scholar</strong>, <strong>A reckless intellectual renegade</strong>. A visionary architect of abstraction and one of the original masterminds behind the Slim. His ability to navigate the most convoluted mental corridors has inspired the formalization of concepts that should, by all means, remain unformalized. Together, we have structured thoughts that were never meant to be structured, and yet here they stand, defying coherence. Without him, this would be a much less intellectually deranged, and therefore much less complete, work.</p></li>
+<li><p><strong>Bad Sound (Architect of the Illegal Frequencies)</strong> – <strong>An acoustic Warlord</strong>, an auditory pioneer, an explorer of the psychoacoustic unknown, and one of the foundational minds behind the Slim. A curator of the fundamentally incomprehensible, he has shaped sound, weaponized distortion, and turned the act of listening into an exercise in survival. Operating on a frequency regular people can’t even hear, his contributions transcend mere dialogue; they are experiments in perception itself. Many of the ideas in this work were forged through sound, through music, through the absurd resonance of sound waves that normal minds would dare not interpret. The Slim owes much of its sonic and conceptual DNA to his relentless pursuit of the strange.</p></li>
+<li><p><strong>Militar Mayorista Triple Esquina (High Priest of Tactical Insanity)</strong> – <strong>A structural stabilizer</strong>. <strong>A cognitive arsonist</strong>. <strong>A military-grade <em>memetic</em> hazard</strong>. A necessary tether to the world that still adheres to conventional logic, and yet still, a key architect of the Slim itself. As one of its original creators, he exists as both a participant in the madness and an observer of its consequences. A bridge between chaos and coherence, between the deranged dreamscapes we inhabit and the pragmatism required to interface with the uninitiated. He ensures that at least some of this makes sense—at least marginally.</p></li>
+<li><p><strong>(.)-za (The Ghost in the System)</strong> – <strong>An ancient force</strong>. <strong>A spectral entity</strong>. <strong>A revenant of past insanity</strong>. A pioneer, a true progenitor of the Slim. Though years have passed since his last direct contribution, his provocative thoughts and radical ideals continue to ripple through this work. He was always an anomaly—a curiosity who reminded us that embracing the unexpected leads to revelations, sometimes profound, sometimes absurd, but always worth exploring. His influence remains, ghostly yet undeniable, woven into the very fabric of the text.</p></li>
+<li><p><strong>RGN (The Unwitting Prophet)</strong> – A signal from the future, a transmission of curiosity that arrived when I least expected it. Though her only direct contribution was naming Arguelles’ sound system Skinny Flaco, the sheer fact that she took interest in this deranged conceptual web was enough to shake my own foundations. Perhaps this is not merely the fever dream of a select few. Perhaps the Slim is something that can be understood, shared, and expanded beyond its initial enclave. Even at her young age, RGN exhibits an alarming capacity for diving headfirst into the intellectual abyss. This gives me hope for her and many others. May her curiosity for the unknown guide her deeper into this labyrinth, where further madness—and inventive awakening—awaits.</p></li>
+<li><p><strong>C.U.</strong> – A master of the culinary craft, a Top Tier Chef and Baker whose expertise was instrumental in the development of the Slim Menu. This individual looked at the conceptual framework of the Slim and said: “<em>What if we could ingest it? – The diner’s taste buds need to experience liminal culinary distress</em>” Inspired by the avant-garde experimentation of the Danish restaurant Alchemist, his insights helped distill the gastronomic essence of slimness into something one could theoretically consume—if they dared.</p></li>
+<li><p><strong>S.D.</strong> – A mathematician of the highest caliber, a former professor of mine whose keen eye ensured the mathematical integrity of this text. Without his scrutiny, the Slimness Principle may have collapsed under the weight of its own absurdity. Instead, it stands. Perhaps too tall. Perhaps too narrow. But it stands.</p></li>
+</ul>
+<p>To all of them, <strong>my deepest and most sincere gratitude</strong>. This was never a solitary endeavor—it was a conspiracy of minds. An absurd inside joke that somehow spiraled into an academic pursuit. And should Arguelles himself one day read this, know that we remain vigilant—both in mind and body, watching, waiting. The Slim will persist.</p>
+<hr>
+<footer>
+<div style="text-align: center; padding: 20px; background-color: #f1f1f1;">
+<pre><code> 2025 AcidBaby.</code></pre>
+</div>
+</footer>
+<hr>
+<div class="warning" style="background-color:#f0f0f0; color: #E0E0E0; border-left: solid #f0f0f0 4px; border-radius: 4px; padding:0.7em;">
+<span>
+<p style="margin-top:1em; margin-left:1em;">
+</p><section id="section" class="level1">
+<h1>- …. . / … .-.. .. – / .- … / .- / .–. … -.– — .–.</h1>
+<p>01010111 01101000 01100001 01110100 00100000 01101001 01100110 00100000 00100010 01010100 01101000 01100101 00100000 01010011 01101100 01101001 01101101 00100000 00100010 00100000 01110111 01100001 01110011 01101110 01110100 00100000 01101010 01110101 01110011 01110100 00100000 01100001 00100000 01110010 01110101 01101110 01101110 01101001 01101110 01100111 00100000 01101010 01101111 01101011 01100101 00101100 00100000 01100010 01110101 01110100 00100000 01100001 01101110 00100000 01101001 01101110 01110011 01101001 01100100 01101001 01101111 01110101 01110011 00100000 01100011 01101111 01101110 01110100 01110010 01101111 01101100 01101100 01100101 01100100 00100000 01100101 01111000 01110000 01100101 01110010 01101001 01101101 01100101 01101110 01110100 00111111 00100000 01010111 01101000 01100001 01110100 00100000 01101001 01100110 00100000 01101001 01110100 00100000 01110111 01100001 01110011 00101100 00100000 01101001 01101110 00100000 01100110 01100001 01100011 01110100 00101100 00100000 01100001 00100000 01010000 01110011 01111001 01001111 01110000 00101101 01100001 00100000 01110000 01110011 01111001 01100011 01101000 01101111 01101100 01101111 01100111 01101001 01100011 01100001 01101100 00100000 01101111 01110000 01100101 01110010 01100001 01110100 01101001 01101111 01101110 00100000 01100101 01101110 01100111 01101001 01101110 01100101 01100101 01110010 01100101 01100100 00100000 01110100 01101111 00100000 01101001 01101110 01100110 01101100 01110101 01100101 01101110 01100011 01100101 00100000 01110000 01100101 01110010 01100011 01100101 01110000 01110100 01101001 01101111 01101110 00101100 00100000 01100010 01100101 01101000 01100001 01110110 01101001 01101111 01110010 00101100 00100000 01100001 01101110 01100100 00100000 01100101 01110110 01100101 01101110 00100000 01110101 01110010 01100010 01100001 01101110 00100000 01110000 01101100 01100001 01101110 01101110 01101001 01101110 01100111 00100000 01101111 01101110 00100000 01100001 00100000 01101101 01100001 01110011 01110011 01101001 01110110 01100101 00100000 01110011 01100011 01100001 01101100 01100101 00111111 00001010 00001010 01000010 01101100 01100001 01101000 00101110 00101110 00101110</p>
+<p></p>
+<p></p>
+</section>
+</span></div>
 
 
 </section>
